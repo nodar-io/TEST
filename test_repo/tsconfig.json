@@ -1,7 +1,18 @@
 {
   "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }],
+
+  "compilerOptions": {
+    // Ваши настройки компилятора
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/**/*.gql", // Добавьте эту строку
+    "src/graphql.d.ts", // Убедитесь, что файл декларации типов также включен
+    "check.js",
+    "vite-plugin-dotenv.d.ts"
+  ],
+  "exclude": ["node_modules"]
 }

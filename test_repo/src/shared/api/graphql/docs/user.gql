@@ -1,0 +1,22 @@
+query GetUserRepos {
+  viewer {
+    repositories(first: 10) {
+      edges {
+        node {
+          id
+          name
+          owner {
+            login
+          }
+          stargazerCount
+          updatedAt
+          url
+        }
+      }
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+    }
+  }
+}

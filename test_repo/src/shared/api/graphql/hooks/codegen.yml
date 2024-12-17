@@ -1,0 +1,16 @@
+overwrite: true
+schema:
+  ${VITE_BASE_URL}:
+    headers:
+      User-Agent: nodar-io
+      Authorization: Bearer ${VITE_API_TOKEN}
+documents: './src/shared/api/graphql/docs/**/*.gql'
+generates:
+  ./src/shared/api/graphql/hooks/__generated__.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+config:
+  maybeValue: 'T'
+  immutableTypes: true

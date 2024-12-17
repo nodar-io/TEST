@@ -1,0 +1,22 @@
+query SearchRepos($query: String!, $after: String) {
+  search(query: $query, type: REPOSITORY, first: 10, after: $after) {
+    edges {
+      node {
+        ... on Repository {
+          id
+          name
+          owner {
+            login
+          }
+          stargazerCount
+          updatedAt
+          url
+        }
+      }
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
